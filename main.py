@@ -7,8 +7,6 @@ from scipy.integrate import quad
 app = Flask(__name__)
 xt = 0
 skey = sys.argv[2]
-if skey != "spasibo":
-    return 0
 
 def f(x):
     return x**2-2**5
@@ -57,14 +55,19 @@ def sh12():
 
 file_path = sys.argv[1]
 
-try:
-    config = configparser.ConfigParser()
-    config.read(file_path)
-    x = config['MATH']['x']
-    y = config['MATH']['y']
-    app.run(port=20000, debug=True)
-except:
-    print("Что-то не так с конфигурационным файлом")
+if __name__ == '__main__':
+    if skey != "spasibo":
+        return 0
+    
+    try:
+        config = configparser.ConfigParser()
+        config.read(file_path)
+        x = config['MATH']['x']
+        y = config['MATH']['y']
+        app.run(port=20102, debug=True)
+    except:
+        print("Что-то не так с конфигурационным файлом")
+    
+        print("Something is wrong with the configuration file.")
 
-    print("Something is wrong with the configuration file.")
 
