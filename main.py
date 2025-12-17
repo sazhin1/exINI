@@ -57,7 +57,7 @@ file_path = sys.argv[1]
 
 if __name__ == '__main__':
     if skey != "spasibo":
-        return 0
+        sys.exit()
     
     try:
         config = configparser.ConfigParser()
@@ -69,5 +69,6 @@ if __name__ == '__main__':
         print("Что-то не так с конфигурационным файлом")
     
         print("Something is wrong with the configuration file.")
+
 
 
