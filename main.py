@@ -43,7 +43,7 @@ def sh12354():
 #     except Exception as e:
 #         return jsonify(message=f"NOT OK {e}"), 400
 
-@app.route("/postXT", methods=["POST"])
+@app.route("/postXTX", methods=["POST"])
 def sh12():
     global xt
     try:
@@ -69,6 +69,7 @@ if __name__ == '__main__':
         print("Что-то не так с конфигурационным файлом")
     
         print("Something is wrong with the configuration file.")
+
 
 
 
