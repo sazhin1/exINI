@@ -6,8 +6,13 @@ from scipy.integrate import quad
 
 app = Flask(__name__)
 xt = 0
+skey = sys.argv[2]
+if skey != "spasibo":
+    return 0
+
 def f(x):
     return x**2-2**5
+
 
 @app.route("/getRes", methods=["GET"])
 def sh12354():
@@ -62,3 +67,4 @@ except:
     print("Что-то не так с конфигурационным файлом")
 
     print("Something is wrong with the configuration file.")
+
