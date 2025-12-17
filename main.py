@@ -45,7 +45,7 @@ def sh12():
     global xt
     try:
         data = request.get_json()
-        xt = data.get("res")
+        xt = data.get("rez")
         return jsonify(message=f"OK"), 400
     except Exception as e:
         return jsonify(message=f"NOT OK {e}"), 400
@@ -60,4 +60,5 @@ try:
     app.run(port=20000, debug=True)
 except:
     print("Что-то не так с конфигурационным файлом")
+
     print("Something is wrong with the configuration file.")
